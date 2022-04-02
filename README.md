@@ -26,37 +26,37 @@ By filling the credentials like Name, EmailId, Phone No, Password you will get s
 By filling the logIn credentials EmaiId and Password you will be redirected to the login page and in the login page you can add your details for further process.
 
 Team members who worked along with me on this project:
-Md Owais Athar 
-Faisal Khan 
-Lakhan Yadav
-Jai Phookan
-Pratik Mate
-Mohammad Mobin Menon
+Md Owais Athar:
+Faisal Khan:
+Lakhan Yadav:
+Jai Phookan:
+Pratik Mate:
+Mohammad Mobin Menon:
 
 Individual Team Contribution:-
 
-Md Owais Athar 
+Md Owais Athar:-
 My responsibilities were focused on building the homepage of the website.
 I have used the HTML & CSS part to build the website homepage and functionality added by using JavaScript.
 
 Medium Blog link : https://medium.com/@owais.athar.8092/collaborative-project-at-masai-school-hometo-go-clone-98016df15c63
 
-Lakhan Yadav
+Lakhan Yadav:-
 Lakhan responsibilities were focused on to the search section bar and adding functionality to the search bar using JavaScript.
 
-Faisal Khan
+Faisal Khan:-
 Faisal responsibilites were focused on creating your account section of SignUp & LogIn section and authentication using JavaScript. 
 
-Jai Phookan
+Jai Phookan:-
 My responsibilities were focused on building the Wishlist page.
 Jai worked on replicating the same design of the Wishlist page across the header, body and footer.
 Added the Javascript code to retrieve the data of properties added to the Wishlist from local storage and display the same on the Wishlist page
 
-Mohammad Mobin Menon
+Mohammad Mobin Menon:-
 Mobin responsibilities were focused on search sorting with cities, price & ratings of the properties.
 Added the sorting functionality using HTML, CSS & JavaScript.
 
-Pratik Mate
+Pratik Mate:-
 Pratik responsibilities were focused on creating the list your property section.
 Website functional and responsive using HTML, CSS & JavaScript.
 
