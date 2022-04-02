@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+
+    <title>Wishlist</title>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <style>
+        /* From Prateek Page */
+        #head {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 15px;
+            margin-bottom: 64px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        #head>div>img {
+            height: 32px;
+            width: 59px;
+        }
+
+        #search {
+            padding-top: 7px;
+        }
+
+        #search>button:hover {
+            background-color: rgb(235, 232, 232);
+        }
+
+        #head>div {
+            width: 6%;
+        }
+
+        #head>div>button {
+            border: none;
+            background-color: white;
+            color: grey;
+            font-size: 14px;
+        }
+
+        /* FOOTER PRATIK */
+        #footer {
+            width: 100%;
+            background-color: #f4f4f4;
+            font-family: Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #footer>div {
+            width: 65%;
+            margin: auto;
+            display: flex;
+            /* border: 1px solid red; */
+        }
+
+        #bimg>button>img {
+            width: 112px;
+            height: 37px;
+        }
+
+        #bimg>button {
+            border: none;
+        }
+
+        #footer>div>div {
+            display: flex;
+            width: 25%;
+            flex-direction: column;
+        }
+
+        #footer>div>div>a {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        #footer>div>div>p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #6f6f6f;
+        }
+
+        #footer>div>img {
+            height: 32px;
+            width: 59px;
+        }
+
+        /* From YourAccount Page */
+        /* #head
+        {
+            width: 100%;
+            height: auto;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        } */
+        /* .heading
+        {
+            color: #6f6f6f;
+        }
+        .headContent
+        {
+            width: 50%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .headContent>.gotoHome
+        {
+            width: 100px;
+            height: 80px;
+
+        }
+        .headContent>.searchBack
+        {
+            width: 120px;
+            height: 50px;
+            font-size: 23px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: bold;
+            margin-top: 16px;
+            margin-left: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border: none;
+        }
+        .headContent>.searchBack:hover
+        {
+            background-color:#e0e0e0 ;
+            cursor: pointer;
+        } */
+
+        #midsection {
+            width: 55%;
+            margin: 20px 20px;
+            padding: 0px 8px;
+            /* border: 1px solid red; */
+            height: 420px;
+            margin: auto;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+
+        #midsection>div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid red; */
+            height: 20%;
+            margin-top: 80px;
+        }
+
+        #midsection>div:nth-child(2) {
+            /* padding-top: 60px; */
+            justify-content: space-between;
+            /* border: 1px solid red; */
+            height: 25%;
+            margin-top: 130px;
+        }
+
+        #newListBtn {
+            border-radius: 15px;
+            background: #612ace;
+            color: aliceblue;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            height: 65px;
+            width: 135px;
+            font-size: 17px;
+            font-weight: bolder;
+        }
+
+        footer {
+            background-color: #f4f4f4;
+            height: 400px;
+            padding: 0px 24px;
+
+
+        }
+
+        #midsection>div>p {
+            font-size: 20px;
+        }
+
+        footer>div {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding-top: 15px;
+            color: #6f6f6f;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        footer>div>div {
+            line-height: 24px;
+            font-size: 16px;
+        }
+
+        div>img {
+            height: 40px;
+            padding: 5px;
+        }
+
+        /* STYLES FROM SEARCH PAGE */
+
+        #navbar {
+            width: 100%;
+            border: 1px solid #ddd8d8;
+            position: fixed;
+            top: 2px;
+            display: flex;
+            font-size: 14px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: white;
+            align-items: center;
+        }
+
+        .logo {
+            width: 107px;
+            height: 55px;
+            border-right: 1px solid #ddd8d8;
+            text-align: center;
+
+        }
+
+        .logo>a>img {
+            height: 32px;
+            width: 59px;
+            margin-top: 10px;
+        }
+
+        .location {
+            width: 310px;
+        }
+
+        .date {
+            width: 310px;
+            border-right: 1px solid #ddd8d8;
+
+        }
+
+        .guest {
+            width: 180px;
+            border-right: 1px solid #ddd8d8;
+        }
+
+        /* .otherPages {
+            width: 800px;
+
+        } */
+
+        div>p>i {
+            color: #ddd8d8;
+            font-size: 18px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            /* margin-right: 15px;
+            margin-left: 15px; */
+        }
+
+        /* #navbar>div {
+            padding: 10px;
+        } */
+
+        .otherPages {
+            display: flex;
+            width: 600px;
+            justify-content: flex-end;
+
+        }
+
+        .otherPages>.myAccount,
+        .otherPages>button {
+            font-size: 14px;
+            color: #6f6f6f;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        /* .otherPages>.myAccount>p>i {
+            font-size: 14px;
+            color: #6f6f6f;
+            margin-left: 10px;
+        } */
+
+        .otherPages>.myAccount>p>a {
+            text-decoration: none;
+            color: #6f6f6f;
+        }
+
+        .otherPages>button:hover {
+            background-color: #c9c9c9;
+        }
+
+        .otherPages>.wish>i {
+            color: #d43228;
+        }
+
+
+
+        /* nav  bar completed */
+
+        /* navbar2 start from here */
+        .navbar2 {
+            display: flex;
+            justify-content: space-between;
+            width: 750px;
+            height: 100px;
+            /* border: 1px solid black; */
+            margin-top: 100px;
+
+
+        }
+
+        .navbar2>div {
+            /* width: 30px; */
+            /* height: 30; */
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        /* .location
+        {
+         
+        } */
+
+        .navbar2>div>select {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            font-size: 15px;
+            background-color: #dfdfdf;
+            border: none;
+            ;
+
+        }
+
+        .navbar2>.rating>select {
+            margin-top: 50px;
+
+        }
+
+        .filter {
+            width: 850px;
+            height: 45px;
+            background-color: #dfdfdf;
+            border-radius: 50px;
+            font-size: 15px;
+            margin-top: 28px;
+            padding: 10px;
+            box-sizing: border-box;
+            /* border:2px solid red */
+        }
+
+
+        /* navbar2 completed here */
+        #center {
+            display: flex;
+            /* grid-template-columns:repeat(2,1fr) ; */
+            gap: 15px;
+            justify-content: space-between;
+
+        }
+
+        #left {
+            /* height: 1000px; */
+            width: 800px;
+            /* border:2px solid yellow; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 25px;
+            margin-left: 60px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            /* position: absolute; */
+        }
+
+        #right {
+            height: 800px;
+            width: 45%;
+            /* border:2px solid red; */
+            /* display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto; */
+            gap: 15px;
+            margin-top: 100px;
+            position: fixed;
+            right: 2px
+        }
+
+        #outer {
+            height: 260px;
+            width: 650px;
+            /* border: 2px solid red; */
+            margin-left: 20px;
+            display: flex;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border-radius: 10px;
+        }
+
+        #inner1 {
+            width: 280px;
+            height: 250;
+            /* border: 2px solid black; */
+            display: flex;
+            border-radius: 10px;
+
+        }
+
+        #top_left {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height: 30px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+
+            /* margin-top: 5px; */
+            /* margin-bottom: 10px; */
+        }
+
+        /* #{
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        }
+         */
+        #img1 {
+            height: 30px;
+            width: 30px;
+            /* border-radius: 50%; */
+        }
+
+        #img2 {
+            height: 30px;
+            width: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+            /* border-radius: 50%; */
+        }
+
+        #img2 :hover {
+            background-color: red;
+        }
+
+        #inner2 {
+            width: 470px;
+            height: 230px;
+            /* border: 2px solid green; */
+            display: block;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            padding-bottom: 10px;
+        }
+
+        #image {
+            height: 250px;
+            width: 280px;
+            align-items: flex-start;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        #inner2_top {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #inner2_middle {
+            height: 140px;
+            width: 100%;
+            /* border: 2px solid black; */
+            margin-left: 10px;
+        }
+
+        #line1 {
+            font-size: 10px;
+            color: gray;
+            /* margin-left: 10px; */
+        }
+
+        #line3 {
+            font-size: 20px;
+            /* line-height: 18px; */
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+            margin-top: -10px;
+            font-weight: bold;
+
+        }
+
+        #address {
+            font-size: 10px;
+            color: #6f6f6f;
+            margin-top: -18px;
+        }
+
+        #violet {
+            color: #6730ce;
+
+        }
+
+        #maroon {
+            color: maroon;
+
+        }
+
+        #inner2_bottom {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+            /* margin-left: 10px; */
+            /* margin-right: -10px; */
+            /* margin-bottom: 0px;
+            padding-bottom: 0px; */
+        }
+
+        #bottom_btn1 {
+            margin-left: 10px;
+            color: #6f6f6f;
+            font-weight: bold;
+            background-color: white;
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+            border-radius: 5px;
+            ;
+            border: 1px solid white;
+            height: 25px
+        }
+
+        #bottom_btn1:hover {
+            background-color: whitesmoke
+        }
+
+        #bottom_btn2 {
+            margin-right: 10px;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+            background-color: #6730ce;
+            font-weight: bolder;
+
+        }
+
+        #rating {
+            display: flex;
+            /* border:2px solid red; */
+            margin-top: -5px;
+            /* font-size: 20px; */
+            /* line-height: 0px; */
+            color: #6730ce;
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+
+        }
+
+        #cancel {
+            font-size: 10px;
+            color: gray;
+            margin-top: -10px;
+        }
+
+        #city_img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #wish {
+            border: none;
+            background-color: white;
+        }
+
+        div~h1,
+        h1~h2 {
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+
+        body {
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+</style>
+</head>
+
+<body>
+    <h1></h1>
+    <!-- <div id="maindiv" class="mainsections"> -->
+    <!-- PRATIK CODE     -->
+    <div id="head">
+        <div id="search"><i class="fa-solid fa-arrow-left"></i><button onclick="searchPage()">Search</button></div>
+        <div><img src="https://www.hometogo.com/assets/logo/logo-color.svg" onclick="homePage()" alt=""></div>
+        <div></div>
+    </div>
+
+    <!-- <div id="head">
+            <div class="headContent">
+                
+                <button  onclick="construct_week_project/searchPage.html"; class="searchBack"><svg width="22" height="22" viewBox="0 0 16 16" icon="arrow-left-c" class="fxsh0"><g fill-rule="evenodd">         <path d="M10 1.291c0 .17-.06.282-.18.394L3.115 7.972l6.705 6.343c.12.057.18.225.18.337 0 .169-.06.281-.18.393l-.838.786a.671.671 0 0 1-.42.169c-.12 0-.3-.057-.42-.169L.18 8.365A.496.496 0 0 1 0 7.972c0-.113.06-.225.18-.337L8.143.169c.12-.112.3-.169.42-.169.119 0 .3.057.419.169l.838.786c.12.112.18.224.18.336z" fill-rule="nonzero"></path>         <path d="M2 6.957h13.444c.159 0 .291.053.397.159a.539.539 0 0 1 .159.397v1.111a.539.539 0 0 1-.159.397c-.132.133-.251.172-.357.12L2 9.18V6.956z"></path></g></svg> Search</button>
+                <img src="https://www.hometogo.com/assets/logo/logo-color.svg" alt="go to home" class="gotoHome">
+            </div>
+        </div> -->
+
+
+    <h1 style="text-align: center; ">Wishlist</h1>
+    <h2 style="text-align: center; ">All Saved Properties:</h2>
+    <div id="left"> </div>
+
+    <!-- Pratik Code id="head"  -->
+
+
+    <!-- <div id="midsection">
+          <div>
+            <h1>Wish Lists</h1>
+            <button type="submit" id="newListBtn">Add new list</button>
+          </div>
+          <div>
+            <h2>You do not have any wish lists yet</h2>
+            <p>It’s empty here. Start a new search and click on the heart icon to save properties you like.</p>
+          </div>
+        </div> -->
+
+    <!-- JAI FOOTER -->
+    <!-- <footer>
+          <div style="width: 60%; padding-left: 250px;  " >
+              <div>
+                  <h3>HOMETOGO</h3>
+                  
+                    <p>About Us</p>
+                    <p>Careers</p>
+                    <p>Investors</p>
+                    <p>HomeToGoStock</p>
+                    <p>App</p>
+                    <p>Insights</p>
+                    <p>Inspiration</p>
+                    <p>COVID-19: Latest updates</p>
+                    <img id="logo"  src="https://www.hometogo.com/assets/logo/logo-color.svg"/>
+                  
+                </div>
+                <div>
+                    <h3>CONTACT</h3>
+                    <p>Press</p>
+                    <p>Help Center and Contact</p>
+                    <p>Become a Partner</p>
+                    <p>Sign-up as a Host</p>
+                  </div>
+                  <div>
+                      <h3>PRIVACY & TERMS</h3>
+                      <p>Terms of Service</p>
+                      <p>Privacy Policy</p>
+                      <p>Legacy</p>
+                      <p>Sign-up as a Host</p>
+                  </div>
+                  <div>
+                      <h3>SOCIAL MEDIA</h3>
+                      <div>
+                          <img src="https://cdn2.hometogo.net/assets/media/svg/b594b1a38478e464f2c95858713ad432.svg">
+                          <img src="https://cdn2.hometogo.net/assets/media/svg/12023f6a7b698379fa4e6aff3e88edfd.svg">
+                      </div>    
+                      <h3>HOMETOGO APPS</h3>
+                      <img style="height: 120px; " src="https://www.freepnglogos.com/uploads/app-store-logo-png/apple-app-store-travel-awards-globestamp-7.png">
+                  </div>
+          </div>
+    
+        </footer>  -->
+
+    <!-- PRATIK FOOTER -->
+    <div id="footer">
+        <div>
+            <div>
+                <p>HOMETOGO</p>
+                <a href="https://www.hometogo.com/about/">About Us</a>
+                <a href="https://www.hometogo.com/careers/">Careers</a>
+                <a
+                    href="https://ir.hometogo.de/websites/hometogo/English/1/welcome-to-hometogo-se-investor-relations.html">Investor</a>
+                <a href="https://ir.hometogo.de/websites/hometogo/English/1000/share-information.html">HomeToGo
+                    Stock</a>
+                <a href="https://www.hometogo.com/app/">App</a>
+                <a href="https://www.hometogo.com/media/">Insights</a>
+                <a href="https://www.hometogo.com/inspiration/">Inspiration</a>
+                <a href="https://www.hometogo.com/media/covid-19/">COVID-19:Latest updates</a>
+            </div>
+            <div>
+                <p>CONTACT</p>
+                <a href="https://www.hometogo.com/about/press/">Press</a>
+                <a href="https://help-center.hometogo.com/s/?language=en_US">Help Center and Contact</a>
+                <a href="https://www.hometogo.com/partner/">Become a Partner</a>
+                <a href="https://my.hometogo.com/">Sign-up as a Host</a>
+            </div>
+            <div>
+                <p>PRIVACY & TERMS</p>
+                <a href="https://www.hometogo.com/legal/#gtc">Terms of Service</a>
+                <a href="https://www.hometogo.com/legal/#dataprotection">Privacy Policy</a>
+                <a href="https://www.hometogo.com/legal/">Legal</a>
+            </div>
+            <div>
+                <p>HOMETOGO APPS</p>
+                <div id="bimg">
+                    <button class="bimg" onclick="appstore()"><img
+                            src="https://icon-library.com/images/apple-download-icon/apple-download-icon-15.jpg"
+                            alt=""></button>
+                    <button class="bimg" onclick="playstore()"><img
+                            src="https://www.freepnglogos.com/uploads/play-store-logo-png/google-play-store-logo-keyword-the-amazon-insider-podcast-6.png"
+                            alt=""></button>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div><img src="https://www.hometogo.com/assets/logo/logo-color.svg" onclick="homePage2()" alt=""></div>
+    </div>
+    <!-- </div> -->
+
+</body>
+<script>
+    //Step 1: Extracting/Obtaining the array of data objects (that was added to WishList) from localStorage, stored with the key wishlistObj
+    var wishLists = JSON.parse(localStorage.getItem("wishlistObj")) || [];
+
+    window.addEventListener("load", function () {
+        displayWishList(wishLists)
+    })
+
+    //Function to display Wishlists:
+    function displayWishList(wishLists) {
+
+        wishLists.map(function (e,i) {
+
+            console.log("Jai");
+            var box = document.createElement('div');
+
+            box.id = "outer";
+            var box1 = document.createElement('div');
+            box1.id = "inner1";
+            var image = document.createElement('img');
+            image.src = e.image;
+            image.id = 'image'
+            box1.append(image);
+
+            var box2 = document.createElement('div');
+            box2.id = "inner2";
+
+            var box3 = document.createElement('div');
+            box3.id = 'inner2_top';
+
+            var top_left = document.createElement('div');
+            top_left.id = 'top_left';
+            var str = document.createElement('p');
+            str.innerText = "$" + e.price + " for 2 nights";
+            top_left.append(str);
+
+            box3.append(top_left);
+
+            var box4 = document.createElement('div');
+            box4.id = 'inner2_middle';
+
+            var para1 = document.createElement('p');
+            para1.innerText = e.line1;
+            para1.id = 'line1';
+
+            var para2 = document.createElement('p');
+            para2.innerText = e.line2;
+            para2.id = 'line2';
+
+            var para3 = document.createElement('p');
+            para3.innerText = e.line3;
+            para3.id = 'line3';
+
+            var para4 = document.createElement('p');
+            para4.innerText = e.address;
+            para4.id = 'address';
+            var para5 = document.createElement('p');
+            para5.id = 'rating';
+            para5.innerText = e.rating + e.ratingNo;
+            var para6 = document.createElement('p');
+            para6.id = 'cancel';
+            para6.innerText = e.cancel;
+
+            box4.append(para1, para2, para3, para4, para5, para6);
+
+            // Extraneous
+            var box5 = document.createElement('div');
+            box5.id = 'inner2_bottom';
+
+            var btn1 = document.createElement('button');
+            btn1.innerText = 'Details';
+            btn1.id = 'bottom_btn1';
+
+            var btn2 = document.createElement('button');
+            btn2.innerText = 'Remove';
+            btn2.id = 'bottom_btn2';
+            btn2.addEventListener("click", function(){
+                removefunction(e,i)
+            })
+
+            box5.append(btn1, btn2);
+            //End
+
+            box2.append(box3, box4, box5);
+
+            box.append(box1, box2);
+            document.querySelector('#left').append(box);
+
+        })
+    }
+
+    function removefunction(e,i){
+        wishLists.splice(i,1);
+        localStorage.setItem("wishlistObj",JSON.stringify(wishLists));
+        window.location.reload()
+    }
+
+
+    function homePage2() {
+        window.open("index.html", "_self");
+    }
+    function homePage(){
+       window.open("index.html","_self");
+    }
+    function searchPage(){
+       window.open("searchPage.html","_self");
+    }
+
+    function appstore() {
+        window.open("https://apps.apple.com/app/id1104996296?mt=8", "_self");
+    }
+
+    function playstore() {
+        window.open("https://play.google.com/store/apps/details?id=com.hometogo&referrer=adjust_reftag%3DcoKRyerthl2QX%26utm_source%3DHomeToGo%2BSite%26utm_campaign%3DFooter%2BFrontdoor", "_self");
+    }
+
+</script>
+
+
+
+
+
+</html>

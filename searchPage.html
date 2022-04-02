@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <style>
+        #navbar {
+            width: 100%;
+            border: 1px solid #ddd8d8;
+            position: fixed;
+            top: 2px;
+            display: flex;
+            font-size: 14px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: white;
+            align-items: center;
+        }
+
+        .logo {
+            width: 107px;
+            height: 55px;
+            border-right: 1px solid #ddd8d8;
+            text-align: center;
+
+        }
+
+        .logo>a>img {
+            height: 32px;
+            width: 59px;
+            margin-top: 10px;
+        }
+
+        .location {
+            width: 310px;
+        }
+
+        .date {
+            width: 310px;
+            border-right: 1px solid #ddd8d8;
+
+        }
+
+        .guest {
+            width: 180px;
+            border-right: 1px solid #ddd8d8;
+        }
+
+        /* .otherPages {
+            width: 800px;
+
+        } */
+
+        div>p>i {
+            color: #ddd8d8;
+            font-size: 18px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            /* margin-right: 15px;
+            margin-left: 15px; */
+        }
+
+        /* #navbar>div {
+            padding: 10px;
+        } */
+
+        .otherPages {
+            display: flex;
+            width: 600px;
+            justify-content: flex-end;
+
+        }
+
+        .otherPages>.myAccount,
+        .otherPages>button {
+            font-size: 14px;
+            color: #6f6f6f;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        /* .otherPages>.myAccount>p>i {
+            font-size: 14px;
+            color: #6f6f6f;
+            margin-left: 10px;
+        } */
+
+        .otherPages>.myAccount>p>a {
+            text-decoration: none;
+            color: #6f6f6f;
+        }
+
+        .otherPages>button:hover {
+            background-color: #c9c9c9;
+        }
+
+        .otherPages>.wish>i {
+            color: #d43228;
+        }
+
+
+
+        /* nav  bar completed */
+
+        /* navbar2 start from here */
+        .navbar2 {
+            display: flex;
+            justify-content: space-between;
+            width: 750px;
+            height: 100px;
+            /* border: 1px solid black; */
+            margin-top: 100px;
+
+
+        }
+
+        .navbar2>div {
+            /* width: 30px; */
+            /* height: 30; */
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        /* .location
+        {
+         
+        } */
+
+        .navbar2>div>select {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 50px;
+            font-size: 15px;
+            background-color: #dfdfdf;
+            border: none;
+            ;
+
+        }
+
+        .navbar2>.rating>select {
+            margin-top: 50px;
+
+        }
+
+        .filter {
+            width: 850px;
+            height: 45px;
+            background-color: #dfdfdf;
+            border-radius: 50px;
+            font-size: 15px;
+            margin-top: 28px;
+            padding: 10px;
+            box-sizing: border-box;
+            /* border:2px solid red */
+        }
+
+
+        /* navbar2 completed here */
+        #center {
+            display: flex;
+            /* grid-template-columns:repeat(2,1fr) ; */
+            gap: 15px;
+            justify-content: space-between;
+
+        }
+
+        #left {
+            height: 1000px;
+            width: 800px;
+            /* border:2px solid yellow; */
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 15px;
+            margin-top: 30px;
+            /* position: absolute; */
+        }
+
+        #right {
+            height: 800px;
+            width: 45%;
+            /* border:2px solid red; */
+            /* display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto; */
+            gap: 15px;
+            margin-top: 100px;
+            position: fixed;
+            right: 2px
+        }
+
+        #outer {
+            width: 750px;
+            /* border: 2px solid red; */
+            margin-left: 20px;
+            display: flex;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border-radius: 10px;
+        }
+
+        #inner1 {
+            width: 280px;
+            height: 250;
+            /* border: 2px solid black; */
+            display: flex;
+            border-radius: 10px;
+
+        }
+
+        #top_left {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height: 30px;
+            /* margin-top: 5px; */
+            /* margin-bottom: 10px; */
+        }
+
+        /* #top_right{
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        }
+         */
+        #img1 {
+            height: 30px;
+            width: 30px;
+            /* border-radius: 50%; */
+        }
+
+        #img2 {
+            height: 30px;
+            width: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+            /* border-radius: 50%; */
+        }
+
+        #img2 :hover {
+            background-color: red;
+        }
+
+        #inner2 {
+            width: 470px;
+            height: 230px;
+            /* border: 2px solid green; */
+            display: block;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            padding-bottom: 10px;
+        }
+
+        #image {
+            height: 250px;
+            width: 280px;
+            align-items: flex-start;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        #inner2_top {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #inner2_middle {
+            height: 140px;
+            width: 100%;
+            /* border: 2px solid black; */
+            margin-left: 10px;
+        }
+
+        #line1 {
+            font-size: 10px;
+            color: gray;
+            /* margin-left: 10px; */
+        }
+
+        #line3 {
+            font-size: 20px;
+            /* line-height: 18px; */
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+            margin-top: -10px;
+            font-weight: bold;
+
+        }
+
+        #address {
+            font-size: 10px;
+            color: #6f6f6f;
+            margin-top: -18px;
+        }
+
+        #violet {
+            color: #6730ce;
+
+        }
+
+        #maroon {
+            color: maroon;
+
+        }
+
+        #inner2_bottom {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+            /* margin-left: 10px; */
+            /* margin-right: -10px; */
+            /* margin-bottom: 0px;
+            padding-bottom: 0px; */
+        }
+
+        #bottom_btn1 {
+            margin-left: 10px;
+            color: #6f6f6f;
+            font-weight: bold;
+            background-color: white;
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+            border-radius: 5px;
+            ;
+            border: 1px solid white;
+            height: 25px
+        }
+
+        #bottom_btn1:hover {
+            background-color: whitesmoke
+        }
+
+        #bottom_btn2 {
+            margin-right: 10px;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+            background-color: #6730ce;
+            font-weight: bolder;
+
+        }
+
+        #rating {
+            display: flex;
+            /* border:2px solid red; */
+            margin-top: -5px;
+            /* font-size: 20px; */
+            /* line-height: 0px; */
+            color: #6730ce;
+            font-family: 'HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif';
+
+        }
+
+        #cancel {
+            font-size: 10px;
+            color: gray;
+            margin-top: -10px;
+        }
+
+        #city_img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #wish {
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://www.hometogo.com/assets/logo/logo-color.svg" alt=""></a>
+        </div>
+        <div class="location">
+            <p id="nav_City"><i class="fa-thin fa-magnifying-glass"></i></p>
+        </div>
+        <div class="date">
+            <p id="nav_Date"><i class="fa-solid fa-calendar-days"></i> 12/03/25</p>
+        </div>
+        <div class="guest">
+            <p id="nav_Preferance"><i class="fa-solid fa-user"></i> Adult</p>
+        </div>
+        <div class="otherPages">
+            <button id="listp">List Your Property</button>
+            <button><i class="fa-solid fa-globe"></i> EN / $</button>
+            <button class="wish" id="wishp"> <i class="fa-solid fa-heart"></i> Wish Lists</button>
+            <div class="myAccount">
+                <p><a href="login.html">My Account</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- navbar completed -->
+    <div id="center">
+
+        <div class="top">
+            <div class="navbar2">
+
+                <div class="amenities">
+                    <select name="" id="amenities">
+                        <option value="">Amenities</option>
+                        <option value="">Pool</option>
+                        <!-- <option value="">Air Conditioning</option> -->
+                        <option value="">Washer</option>
+                        <option value="">Microwave</option>
+                        <option value="">No Smoking</option>
+                        <option value="">Fishing</option>
+                        <!-- <option value="">Wheel chair access</option> -->
+                    </select>
+                </div>
+
+                <div class="price">
+
+                    <select id="price" onchange="handlePriceSort()">
+                        <option value="">select price</option>
+                        <option value="lth">Low to High</option>
+                        <option value="htl">High to Low</option>
+                    </select>
+                </div>
+
+                <div class="rating">
+                    <select name="" id="rating">
+                        <option value="--">select rating</option>
+                        <option value="lth">Low to High</option>
+                        <option value="htl">High to Low</option>
+                    </select>
+                </div>
+
+                <div class="location">
+                    <select name="" id="location">
+                        <option value="">select location</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Hydrabad">Hydrabad</option>
+                        <option value="Hanglore">Banglore</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+
+                <div class="accommodation">
+                    <select name="" id="accomodationType">
+                        <option value="">Accomodation types</option>
+                        <option value="">Cabin</option>
+                        <option value="">Appartment</option>
+                        <option value="">Hoetl</option>
+                        <option value="">Bord</option>
+                        <option value="">Other</option>
+                    </select>
+                </div>
+
+                <div class="filter">All filters</div>
+
+            </div>
+
+            <div id="left"> </div>
+        </div>
+        <!-- nav and left page are in same div and ccompleted here -->
+        <div id="right"></div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<script>
+    var hotelArr = [
+        {
+            city: 'Pune',
+            image: "https://cf.bstatic.com/xdata/images/hotel/square600/323578890.webp?k=a8c172ca51112a027339348cee6cb8effb3667b610966bc604fe340d53de0551&o=&s=1",
+            price: 177,
+            nights: 2,
+            line1: "found on booking.com",
+            line2: "3-Star Hotel",
+            line3: 'Hotel Amby Inn',
+            rating: 3.0,
+            remark: 'Very Good',
+            ratingNo: "(3 reviews)",
+            address: '5.3 mi from city center in Pune',
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Pune',
+            image: 'https://images.trvl-media.com/hotels/4000000/3040000/3034500/3034457/89292b65.jpg?impolicy=resizecrop&rw=598&ra=fit',
+            price: 100,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: "4-Star Hotel",
+            line3: "Park Central",
+            rating: 3.9,
+            remark: "Good",
+            ratingNo: '(294 reviews)',
+            address: "2.5 mi from city center in Pune",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Pune',
+            image: 'https://cf.bstatic.com/xdata/images/hotel/square600/328155311.webp?k=900aefc2d5a457112cb463a2e5f19106e637d5dc7251caab9c101fc69c4c8908&o=&s=1',
+            price: 404,
+            nights: 2,
+            line1: "Found on Bookin.com",
+            line2: "2 Bedroom-1 Hall",
+            line3: "H2O Greens Farmhouse",
+            rating: 5.0,
+            remark: "Excellent",
+            ratingNo: '(30 reviews)',
+            address: "Pune",
+            cancel: "Free Cancellation"
+
+
+        },
+        {
+            city: 'Pune',
+            image: 'https://images.trvl-media.com/hotels/2000000/1380000/1374200/1374168/6723234e.jpg?impolicy=resizecrop&rw=598&ra=fit',
+            price: 163,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: "5-Star Hotel",
+            line3: "The E-Square Hotel",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(391 reviews)',
+            address: "1.8 mi from city center in Pune",
+            cancel: "Free Cancellation"
+
+
+        },
+        {
+            city: 'Mumbai',
+            image: 'https://ak-d.tripcdn.com/images/220i1b000001ab0w9C42A_R_300_225_R5_D.jpg',
+            price: 190,
+            nights: 2,
+            line1: "Found on Trip.com",
+            line2: "3-Star",
+            line3: "The Resort",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(1614 reviews)',
+            address: "Dharvali, Aksa Gaon,Mumbai",
+            cancel: "Free Cancellation"
+
+
+        },
+        {
+            city: 'Mumbai',
+            image: 'https://ak-d.tripcdn.com/images/220d190000017k2nr031D_R_300_225_R5_D.jpg',
+            price: 116,
+            nights: 2,
+            line1: "Found on Trip.com",
+            line2: "3-Star",
+            line3: "Hotel Aircraft International",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(614 reviews)',
+            address: "Navpada,Mumbai",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Mumbai',
+            image: 'https://ak-d.tripcdn.com/images/220h18000001466x7C5C8_R_300_225_R5_D.jpg',
+            price: 132,
+            nights: 2,
+            line1: "Found on Trip.com",
+            line2: "4-Star Hotel",
+            line3: "Hotel Kemps Corner",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(632 reviews)',
+            address: "St. Regis,Mumbai",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Mumbai',
+            image: 'https://ak-d.tripcdn.com/images/220l180000014hehuD31D_R_300_225_R5_D.jpg',
+            price: 720,
+            nights: 2,
+            line1: "Found on Trip.com",
+            line2: "5 Star Hotel",
+            line3: "The Taj Mahal Hotel",
+            rating: 5.0,
+            remark: "Excellent",
+            ratingNo: '(1700 reviews)',
+            address: "Marine Drive,Mumbai",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Hyderabad',
+            image: 'https://cdn2.hometogo.net/large/v1/abc/57b/7d2f62f25ba08ce1d5f6ca0fc7.jpg',
+            price: 61,
+            nights: 2,
+            line1: "Found on Agoda",
+            line2: "4 bedroom 5 appartment",
+            line3: "Tee Hotels",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(700 reviews)',
+            address: "Padmavati Nagar,Hyderabad",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Hyderabad',
+            image: 'https://cdn2.hometogo.net/large/v1/abc/57b/7d2f62f25ba08ce1d5f6ca0fc7.jpg',
+            price: 61,
+            nights: 2,
+            line1: "Found on Agoda",
+            line2: "1 bedroom",
+            line3: "Kalyani Hotels",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(700 reviews)',
+            address: "Mallapalli,Hyderabad",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Hyderabad',
+            image: 'https://images.trvl-media.com/hotels/13000000/12250000/12243700/12243664/9ac3871f.jpg?impolicy=resizecrop&rw=598&ra=fit',
+            price: 101,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: "4 Star Hotel",
+            line3: "Mercury Hotels",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(715 reviews)',
+            address: "Iram Manzil Colony,Hyderabad",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Hyderabad',
+            image: 'https://cf.bstatic.com/xdata/images/hotel/square600/285397588.webp?k=656b47183bd5521785a9c0a41169c5a93f6a71d18f72339ae55b31a526c820ae&o=&s=1',
+            price: 208,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: "5 Star Hotel",
+            line3: "Ivy Palms Villa with pool",
+            rating: 5.0,
+            remark: "Excellent",
+            ratingNo: '(15 reviews)',
+            address: "Royal Palm Estate,Hyderabad",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Hyderabad',
+            image: 'https://ak-d.tripcdn.com/images/220g0g0000007t9f09E63_R_300_225_R5_D.jpg',
+            price: 208,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: '4 Star Hotel',
+            line3: "Falaknuma Palace",
+            rating: 5.0,
+            remark: "Excellent",
+            ratingNo: '(1515 reviews)',
+            address: "Fatima Nagar,Hyderabad",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Banglore',
+            image: 'https://images.trvl-media.com/hotels/36000000/35890000/35884600/35884521/a44f0dc2.jpg?impolicy=resizecrop&rw=455&ra=fit',
+            price: 53,
+            nights: 2,
+            line1: "Found on Expedia",
+            line2: '5 Star Hotel',
+            line3: "Silicon Inn",
+            rating: 4.0,
+            remark: "Good",
+            ratingNo: '(150 reviews)',
+            address: "HSR Layout,Banglore",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Banglore',
+            image: 'https://cdn2.hometogo.net/medium/v1/844/445/21673c1f3d207d727128e412fb.jpg',
+            price: 35,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: '3 Star Hotel',
+            line3: "Clarence Residency",
+            rating: 4.0,
+            remark: "Good",
+            ratingNo: '(150 reviews)',
+            address: "Thomas Town,Banglore",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Banglore',
+            image: 'https://media.vrbo.com/lodging/41000000/40140000/40133100/40133087/439f1a17.f10.jpg',
+            price: 200,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: "2 bedroom 6 guest",
+            line3: "Romantic Gateway",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(200 reviews)',
+            address: "Brindavan Layout,Banglore",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Banglore',
+            image: 'https://cf.bstatic.com/xdata/images/hotel/square200/286540521.webp?k=e3aba337c32675194b5eab5aa2455bf581db57cd5e1469b55a258b773a1e27a9&o=&s=1',
+            price: 250,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: "2 BHK apartment",
+            line3: "Hub Lake Beauty",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(200 reviews)',
+            address: "Kodichikalli,Banglore",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'Banglore',
+            image: 'https://ak-d.tripcdn.com/images/220q0g00000085m3q65A2_R_300_225_R5_D.jpg',
+            price: 350,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: "Apartment",
+            line3: "Vividus",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(200 reviews)',
+            address: "Madhava Nagar,Banglore",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'New Delhi',
+            image: 'https://ak-d.tripcdn.com/images/220q0g00000085m3q65A2_R_300_225_R5_D.jpg',
+            price: 100,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: "3 Star Hotel",
+            line3: "Fantastic Time",
+            rating: 3.0,
+            remark: "Good",
+            ratingNo: '(200 reviews)',
+            address: "Bhagya Nagar,New Delhi",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'New Delhi',
+            image: 'https://media.vrbo.com/lodging/34000000/33320000/33316800/33316786/fbdfa147.f10.jpg',
+            price: 200,
+            nights: 2,
+            line1: "Found on Homestay.com",
+            line2: 'Hotel',
+            line3: "Pecan Park",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(20 reviews)',
+            address: "Dhuval Park,New Delhi",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'New Delhi',
+            image: 'https://media.vrbo.com/lodging/34000000/33150000/33144600/33144527/c477ce83.f10.jpg',
+            price: 255,
+            nights: 2,
+            line1: "Found on Vrbo",
+            line2: '2 bedroom',
+            line3: "Meramar Beach",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(20 reviews)',
+            address: "Dhuval Park,New Delhi",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'New Delhi',
+            image: 'https://cf.bstatic.com/xdata/images/hotel/square600/290374863.webp?k=87a204fd6b437091f7b27e53b69cbf7da4887d38041f9931abe9c3629b95d3a0&o=&s=1',
+            price: 255,
+            nights: 2,
+            line1: "Found on Vrbo",
+            line2: 'Hotel',
+            line3: "WhirlPool",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(20 reviews)',
+            address: "Block K,New Delhi",
+            cancel: "Free Cancellation"
+        },
+        {
+            city: 'New Delhi',
+            image: 'https://cf.bstatic.com/xdata/images/hotel/square600/195289675.webp?k=4dc6aedd9b0453b4ae4a2c08770cb37ff897717deeea964b450e9c4e7c7dea82&o=&s=1',
+            price: 255,
+            nights: 2,
+            line1: "Found on Vrbo",
+            line2: '3 Star Hotel',
+            line3: "RockLand Hotel",
+            rating: 4.0,
+            remark: "Very Good",
+            ratingNo: '(20 reviews)',
+            address: "Block B,New Delhi",
+            cancel: "Free Cancellation"
+        }
+    ];
+
+    // var jobArr=JSON.parse(localStorage.getItem('jobserch'));
+    var C_city = localStorage.getItem('city');
+    document.querySelector('#nav_City').innerText = C_city;
+
+    var p_preference = localStorage.getItem('preference');
+    document.querySelector('#nav_Preferance').innerText = p_preference;
+
+    window.addEventListener('load', function () {
+        displayData(hotelArr);
+    })
+
+
+    function handlePriceSort() {
+
+        var selected = document.querySelector('#price').value;
+        console.log(selected);
+        if (selected == "htl") {
+            hotelArr.sort(function (a, b) {
+                console.log(a.price, b.price)
+                return b.price - a.price;
+            });
+            displayData(hotelArr);
+        }
+
+        if (selected == "lth") {
+            hotelArr.sort(function (a, b) {
+                return a.price - b.price;
+            });
+            displayData(hotelArr);
+        }
+    }
+
+    document.querySelector('#rating').addEventListener('change', ratingSort);
+    function ratingSort() {
+        var selected = document.querySelector('#rating').value;
+        if (selected == 'lth') {
+            hotelArr.sort(function (a, b) {
+                if (Number(a.rating) > Number(b.rating)) return 1;
+                if (Number(a.rating) < Number(b.rating)) return -1;
+                return 0;
+            })
+            console.log(hotelArr);
+            displayData(hotelArr);
+        }
+        if (selected == 'htl') {
+            hotelArr.sort(function (a, b) {
+                if (Number(a.rating) > Number(b.rating)) return -1;
+                if (Number(a.rating) < Number(b.rating)) return 1;
+                return 0;
+            })
+            console.log(hotelArr);
+            displayData(hotelArr);
+        }
+    }
+
+    function displayData(hotelArr) {
+        document.querySelector("#left").innerHTML = "";
+
+        hotelArr.map(function (e) {
+
+            var box = document.createElement('div');
+
+            box.id = "outer";
+            var box1 = document.createElement('div');
+            box1.id = "inner1";
+            var image = document.createElement('img');
+            image.src = e.image;
+            image.id = 'image'
+            box1.append(image);
+
+            var box2 = document.createElement('div');
+            box2.id = "inner2";
+
+            var box3 = document.createElement('div');
+            box3.id = 'inner2_top';
+
+            var top_left = document.createElement('div');
+            top_left.id = 'top_left';
+            var str = document.createElement('p');
+            str.innerText = "$" + e.price + "for 2 nights";
+            top_left.append(str);
+
+            var top_right = document.createElement('div');
+            top_right.id = 'top_right';
+            var img1 = document.createElement('img');
+            img1.src = 'https://cdn-icons-png.flaticon.com/128/3580/3580382.png';
+            img1.id = 'img1';
+            var bimg = document.createElement("button")
+            bimg.id = "wish"
+            var img2 = document.createElement('img');
+            img2.src = 'https://cdn-icons-png.flaticon.com/128/535/535285.png';
+            img2.id = 'img2';
+            bimg.append(img2)
+            bimg.addEventListener("click", function () {
+                addToWishlist(e)
+            })
+            top_right.append(img1, bimg);
+
+
+            box3.append(top_left, top_right);
+
+            var box4 = document.createElement('div');
+            box4.id = 'inner2_middle';
+
+            var para1 = document.createElement('p');
+            para1.innerText = e.line1;
+            para1.id = 'line1';
+
+            var para2 = document.createElement('p');
+            para2.innerText = e.line2;
+            para2.id = 'line2';
+
+            var para3 = document.createElement('p');
+            para3.innerText = e.line3;
+            para3.id = 'line3';
+
+            var para4 = document.createElement('p');
+            para4.innerText = e.address;
+            para4.id = 'address';
+            var para5 = document.createElement('p');
+            para5.id = 'rating';
+            para5.innerText = e.rating + e.ratingNo;
+            var para6 = document.createElement('p');
+            para6.id = 'cancel';
+            para6.innerText = e.cancel;
+
+            box4.append(para1, para2, para3, para4, para5, para6);
+
+            var box5 = document.createElement('div');
+            box5.id = 'inner2_bottom';
+
+            var btn1 = document.createElement('button');
+            btn1.innerText = 'Details';
+            btn1.id = 'bottom_btn1';
+
+            var btn2 = document.createElement('button');
+            btn2.innerText = 'View Detail';
+            btn2.id = 'bottom_btn2';
+
+            box5.append(btn1, btn2);
+
+            box2.append(box3, box4, box5);
+
+            box.append(box1, box2);
+            document.querySelector('#left').append(box);
+        })
+
+        var img_city = document.createElement('img');
+
+        if (C_city == 'Pune') {
+            img_city.src = 'pune.png';
+
+        } else if (C_city == 'Mumbai') {
+            img_city.src = 'Mumbai.png';
+        } else if (C_city == 'Banglore') {
+            img_city.src = 'banglore.png';
+        } else if (C_city == 'Hydrabad') {
+            img_city.src = 'hydrabad.png';
+        } else {
+            img_city.src = 'delhi.png';
+        }
+
+        img_city.id = 'city_img';
+
+        document.querySelector('#right').append(img_city);
+    }
+
+    var wishlistArr =JSON.parse(localStorage.getItem("wishlistObj")) || [];
+    function addToWishlist(e) {
+        wishlistArr.push(e);
+        localStorage.setItem("wishlistObj", JSON.stringify(wishlistArr));
+        alert("Added to Wishlist !")
+    }
+
+    document.querySelector("#listp").addEventListener("click", gotolist);
+    function gotolist(){
+        window.open("listYourProperty.html","_self");
+    }
+
+    document.querySelector("#wishp").addEventListener("click", gotowish);
+    function gotowish(){
+        window.open("wishlist.html","_self");
+    }
+
+</script>

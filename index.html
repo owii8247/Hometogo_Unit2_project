@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <title>HomeToGo | Vacation Rentals</title>
+
+    <style>
+         #navbar {
+            width: 65%;
+            height: 75px;
+            margin: auto;
+            border: 1px solid #ddd8d8;
+            display: flex;
+            font-size: 14px;
+            margin-top: 250px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: white;
+            align-items: center;
+            border-radius: 15px;
+        }
+        #nav_Preferance {
+            border: none;
+            font-size: 20px;
+        }
+        #nav_City {
+            border: none;
+            height: 30px;
+            width: 130px;
+            border-right: 1px solid #ddd8d8;
+
+        }
+        #navbar > div > i {
+            padding: 0px 20px;
+        }
+        #nav_Date1 , #nav_Date2 {
+            border: none;
+            font-size: 20px;
+        }
+        #navbar > div:nth-child(2),#navbar > div:nth-child(3){
+            width: 20%;
+        }
+        #navbar > div:nth-child(1){
+            width: 25%;
+        }
+        #navbar > div:nth-child(5){
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #button_search {
+            padding: 15px;
+            font-size: 15px;
+            width: 70%; 
+        }
+
+        /* .logo {
+            width: 107px;
+            height: 55px;
+            border-right: 1px solid #ddd8d8;
+            text-align: center;
+
+        }
+
+        .logo>a>img {
+            height: 32px;
+            width: 59px;
+            margin-top: 10px;
+        } */
+
+        .location {
+            width: 310px;
+        }
+
+        .date {
+            width: 310px;
+            border-right: 1px solid #ddd8d8;
+
+        }
+
+        .guest {
+            width: 180px;
+            border-right: 1px solid #ddd8d8;
+        }
+        #main {
+            width: 98%;
+            height: 600px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            border-radius: 10px;
+            background-image: url("https://cdn.hometogo.net/assets/media/pics/1920_auto/60c9fbad9d1af.jpg");
+            margin-top: 20px;
+            background-repeat: no-repeat;
+            background-size: 100% 120%
+        }
+
+        .button {
+            color: white;
+            font-weight: bold;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+
+        .email {
+            padding: 10px;
+            width: 50%;
+            border-radius: 5px;
+
+        }
+
+        .button:hover {
+            background-color: blue;
+        }
+
+        h1 {
+            /* text-align: center;
+        color: whitesmoke;
+        margin-top: 200px; */
+            padding-left: 10px;
+            color: white;
+            font-weight: bolder;
+            font-size: 40px;
+            padding-top: 15px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+
+        h3 {
+            padding-left: 10px;
+            padding-top: 10px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            ;
+        }
+
+        .para {
+            padding-left: 10px;
+            font-size: 15px;
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            ;
+        }
+
+        #topmain {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+        #topmain > div {
+            height: 40px;
+            margin-top: 10px;
+        }
+        #toplogo > div > img{
+            width: 59px;
+            height: 32px;
+        }
+
+        #leftmain {
+            display: flex;
+            justify-content: space-around;
+            color: rgb(69, 66, 66);
+            padding-right: 10px;
+            gap: 30px;
+        }
+        #leftmain > div > a {
+            font-family: HTGFellix, Inter, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px;
+            color: rgb(63, 63, 63);
+            border-radius: 10px;
+        }
+        #leftmain > div > a:hover {
+            color: white;
+            background-color: #c5c4c4;
+        }
+
+        #tab {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #serch {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: auto;
+            border-radius: 5px;
+
+            height: 40px;
+            width: 80%;
+            /* padding: 10px 40% 20% 20%; */
+            justify-content: center;
+            margin-left: 100px;
+            background-color: white;
+            margin-top: 100px;
+
+        }
+
+        #editselect1 {
+            width: 100%;
+            height: 100%;
+            font-size: larger;
+
+        }
+
+        #editselect2 {
+            width: 100%;
+            height: 100%;
+            font-size: larger;
+
+        }
+
+        #toplogo {
+            padding-left: 20px;
+            height: 2px;
+            padding-top: 10px;
+        }
+
+
+        #button {
+            /* height: 100%;
+            width: 100%;
+            font-size: larger;
+            color: beige;
+            background-color: blue; */
+        }
+
+        #dateofbirth {
+            color: black;
+        }
+
+        #uk {
+            width: 68%;
+            /* height: 50px; */
+            border: 1px solid rgb(165, 164, 164);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+
+        }
+
+        #learn {
+            width: 68%;
+            /* height: 50px; */
+            border: 1px solid rgb(186, 186, 186);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 15px;
+            padding: 10px;
+
+        }
+
+        #main2 {
+            width: 70%;
+            height: 210px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+            background-color: lavender;
+            /* padding: 10px; */
+
+        }
+
+        #main2>div {
+            width: 45%;
+            padding-top: 20px;
+        }
+
+        #main2>div>p {
+            width: 80%;
+        }
+
+        #main3 {
+            width: 70%;
+            height: 200px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+            display: flex;
+        }
+
+        #main3 > div {
+            width: 30%;
+        }
+
+        #main4 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 20px;
+            /* display: flex; */
+            background-image: url("https://w0.peakpx.com/wallpaper/43/325/HD-wallpaper-infinity-pool-sunset-sky-palm-trees-infinity-design-outdoor-pool-sunset-trees-silhouette-leaves-water-curvy-summer-reflection-blue.jpg");
+            background-size: 100%;
+            /* display: grid; */
+        }
+
+        #main4>h1 {
+            width: 70%;
+        }
+
+        #main4>div {
+
+            padding: 80px 50px;
+            margin-top: 100px;
+            width: auto;
+
+        }
+
+        #main5 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: 25px;
+            /* display: flex; */
+            background-image: url("https://www.teahub.io/photos/full/61-619303_nature-scenery.jpg");
+            background-size: 100%;
+
+        }
+
+        #main5>div {
+
+            padding: 130px 50px;
+
+        }
+
+        #main5new {
+            width: 70%;
+            height: 250px;
+            border-radius: 15px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+
+
+        }
+
+        #main5new>div>img {
+            width: 100%;
+        }
+
+        #main6 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+            background-image: url("https://www.outlookindia.com/outlooktraveller/public/uploads/articles/travelnews/GOA-SHACKS.jpg");
+            background-size: 100%;
+        }
+
+        #main6>div>img {
+            margin-left: 50px;
+            margin-bottom: -230px;
+            border-radius: 10px;
+
+        }
+
+        #main7 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+            background-image: url("https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0abb5406-41c6-11ea-a083-1ec392b38124.jpg?crop=3999%2C2249%2C1313%2C53&resize=1200");
+            background-size: 100%;
+        }
+
+        #main7>h1 {
+            width: 70%;
+        }
+
+        #main7>div>img {
+            margin-left: 50px;
+            margin-bottom: -180px;
+            border-radius: 10px;
+
+        }
+
+        #main8 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+            background-size: 100%;
+            background-image: url("https://denver.cbslocal.com/wp-content/uploads/sites/15909806/2018/08/gettyimages-599962890.jpg?resize=640,427");
+
+        }
+
+        #main8>h1 {
+            width: 60%;
+        }
+
+        #main8>div>img {
+            margin-left: 50px;
+            margin-bottom: -180px;
+            border-radius: 10px;
+
+        }
+
+        #main9 {
+            width: 70%;
+            height: 480px;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+            background-size: 100%;
+            background-image: url("https://miro.medium.com/max/1400/0*SfvawjbBj9zV6bv8.jpg");
+
+        }
+
+        #main9>h1 {
+            width: 60%;
+        }
+
+        #main9>div>img {
+            margin-left: 50px;
+            margin-bottom: -180px;
+            border-radius: 10px;
+
+        }
+
+        #mainsub {
+            width: 40%;
+            padding-left: 10px;
+            color: white;
+            padding-top: 50px;
+        }
+
+        #main10 {
+            width: 70%;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+
+
+        }
+
+        #main10>div {
+            padding-left: 50px;
+            padding-top: 25px;
+
+        }
+
+        #main11 {
+            width: 70%;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+
+        }
+
+        #main11>div>img {
+            width: 100%;
+        }
+
+        #main12 {
+            width: 70%;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+
+        }
+
+        #main12>div>img {
+            width: 100%;
+        }
+
+        #main13 {
+            width: 70%;
+            height: 230px;
+            border-radius: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            margin-top: 10px;
+            /* display: flex; */
+            margin-bottom: 50px;
+
+        }
+
+        #main13edit {
+            display: flex;
+        }
+
+        #footer {
+            width: 100%;
+            background-color: #f4f4f4;
+            font-family: Helvetica, sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        #footer>div {
+            width: 65%;
+            margin: auto;
+            display: flex;
+            /* border: 1px solid red; */
+        }
+
+        #bimg>button>img {
+            width: 112px;
+            height: 37px;
+        }
+        #bimg>button {
+            border: none;
+        }
+        #footer>div>div {
+            display: flex;
+            width: 25%;
+            flex-direction: column;
+        }
+
+        #footer>div>div>a {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        #footer > div > div > p {
+            font-size: 14px;
+            font-weight: bold;
+            color:#6f6f6f;
+           
+        }
+
+        #footer > div > img {
+            height: 32px;
+            width: 59px;
+        }
+        #htag {
+            width: 50%;
+            margin-left: 17%;
+            margin-top: 80px;
+            margin-bottom: -150px;
+        }
+        #htag > h1 {
+            font-size: 48px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="topmain">
+            <div id="toplogo">
+                <div>
+                    <img src="https://www.hometogo.com/assets/logo/logo-redesign-white.svg" alt=""/>
+                </div>
+            </div>
+            <div id="leftmain">
+                <div> <a href="listYourProperty.html">List your property</a> </div>
+                <div><a href="wishlist.html"><i class="fa-solid fa-heart"></i> <span>  </span> Wishlists</a></div>
+                <div><a href="login.html">My account</a></div>
+            </div>
+        </div>
+        <div id="htag">
+            <h1>The World's largest Selection Of Vacation Rentals</h1>
+        </div>
+            <div id="navbar">
+                <!-- <div class="logo">
+                    <a href="index.html"><img src="https://www.hometogo.com/assets/logo/logo-color.svg" alt=""></a>
+                </div> -->
+                <div class="location">
+                    <i class="fa-solid fa-magnifying-glass"></i><input type="text" id="nav_City" placeholder="">
+                </div>
+                <div class="date">
+                    <input type="date" id="nav_Date1" placeholder="Thu.,5/12">
+                </div>
+                <div class="date">
+                    <input type="date" id="nav_Date2">
+                </div>
+                <div class="guest">
+                    <i class="fa-solid fa-user" style="font-size: 16px;"></i><select name="" id="nav_Preferance">
+                        <option value="">Guest</option>
+                        <option value="Adult">Adult</option>
+                        <option value="Children">Children</option>
+                        <option value="Bedroom">Bedroom</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="button_search" class="button">Search</button>
+                </div>
+                <!-- <div class="otherPages">
+                    <button>List Your Property</button>
+                    <button><i class="fa-solid fa-globe"></i> EN / $</button>
+                    <button class="wish"> <i class="fa-solid fa-heart"></i> Wish Lists</button>
+                    <div class="myAccount">
+                        <p><a href="login.html">My Account</a></p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <div id="uk">Ukraine Crisis Relief - Find and Offer Accommodation. Learn more</div>
+    <div id="learn">Learn more about local COVID-19 travel guidelines</div>
+    <div id="main2">
+        <div>
+            <h3>Receive exclusive offers, inspirational stories and travel regulation updates.</h3>
+            <p class="para">Become a subscriber* and receive great tips on travel planning sent to your inbox!</p>
+        </div>
+        <div>
+            <input class="email" type="text" placeholder="Enter email address">
+            <button class="button"> Subscribe</button>
+            <p class="para">By signing up, you agree to our Terms of Service and Privacy Policy. *You will receive offers from
+                HomeToGo and agree that we may share your hashed email address with third parties for the purpose of
+                better tailoring advertising to your needs.</p>
+        </div>
+    </div>
+    <div id="main3">
+        <!-- <div><h3>Find the best vacation rentals from around the world.</h3></div> -->
+
+
+        <div>
+            <h3>Find inspiration for your next trip</h3>
+            <p class="para">Browse vacation homes, cabins, beach houses, apartments, condos, house boats, castles, farm stays – and
+                everything in between.</p>
+        </div>
+        <div>
+            <h3>Discover millions of offers</h3>
+            <p class="para">Find and compare unique offers from thousands of trusted partners. HomeToGo has the largest selection of
+                vacation rentals worldwide.</p>
+        </div>
+        <div>
+            <h3>Book the perfect rental</h3>
+            <p class="para">HomeToGo makes it quick and easy to book just the right accommodation for any trip, no matter your
+                budget.</p>
+        </div>
+
+    </div>
+    <div id="main4">
+
+        <h1>Find vacation rentals with all the comforts of home</h1>
+
+
+        <div><img src="Images/Comfort.PNG" alt=""></div>
+
+
+
+    </div>
+    <div id="main5">
+        <h1>Home rentals for any kind of trip</h1>
+        <div>
+            <img src="Images/homerentals.PNG" alt="">
+        </div>
+    </div>
+    <div id="main5new">
+        <h3>Popular vacation rental destinations</h3>
+
+        <div><img src="Images/worldwide.PNG" alt=""></div>
+
+
+
+    </div>
+    <div id="main6">
+        <h1>Popular Vacation Rental Destinations</h1>
+        <div id="mainsub">
+            <p class="para">Need some inspiration for your next getaway? Find the perfect oceanfront condo, cozy cabin, or luxurious
+                villa in one of these top destinations.</p>
+        </div>
+        <div>
+            <img src="Images/popular.PNG" alt="">
+        </div>
+    </div>
+    <div id="main7">
+        <h1>Explore the Big City from an Apartment Rental</h1>
+        <div id="mainsub">
+            <p class="para">Stay in a fantastic vacation house or apartment rental and immerse yourself in the music, arts and
+                culture of these vibrant urban destinations.</p>
+        </div>
+        <div>
+            <img src="Images/explore.PNG" alt="">
+        </div>
+    </div>
+    <div id="main8">
+        <h1>Cabins to Explore the Great Outdoors</h1>
+        <div id="mainsub">
+            <p class="para">Spend some quality time in the great outdoors! Hike, swim, or bike your way back to the comfort of your
+                cabin rental and re-energize for the next day.</p>
+        </div>
+        <div>
+            <img src="Images/cabins.PNG" alt="">
+        </div>
+    </div>
+    <div id="main9">
+        <h1>Escape to a Secluded Cabin Rental</h1>
+        <div id="mainsub">
+            <p class="para">Looking for an alpine retreat? Rent a cabin in one of these destinations and swap your worries for
+                relaxation, stunning scenery, and fresh mountain air.</p>
+        </div>
+        <div>
+            <img src="Images/escape.PNG" alt="">
+        </div>
+    </div>
+
+    <div id="main10">
+        <h3>Best Spots for Waterfront Homes and Lakehouses</h3>
+        <p class="para">Are you dreaming about vacationing in paradise? Pack your swimsuit and sunscreen and escape to one of these
+            top beach destinations. Browse beautiful beach houses and vacation rentals that are just a short walk from
+            the water.</p>
+        <div><img src="Images/best.PNG" alt=""></div>
+    </div>
+    <div id="main11">
+        <h3>Worldwide Vacation Destinations</h3>
+        <div><img src="Images/world.PNG" alt=""></div>
+    </div>
+    <div id="main12">
+        <h3>Travel to America's 50 States</h3>
+        <p class="para">Explore the USA's 50 states and find your perfect vacation rental.</p>
+        <div><img src="Images/top.PNG" alt=""></div>
+    </div>
+    <div id="main13">
+        <h3>List your own vacation rental</h3>
+        <p class="para">Would you like to list your own vacation rental on HomeToGo? Here are several options for you to choose from:
+        </p>
+        <div id="main13edit">
+            <div>
+                <img src="https://cdn2.hometogo.net/assets/media/pics/216_90/6053435ecdee8.png" alt="">
+            </div>
+            <div>
+                <img src="https://cdn2.hometogo.net/assets/media/pics/216_90/5ea8440edcb50.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div>
+            <div>
+                <p>HOMETOGO</p>
+                <a href="https://www.hometogo.com/about/">About Us</a>
+                <a href="https://www.hometogo.com/careers/">Careers</a>
+                <a href="https://ir.hometogo.de/websites/hometogo/English/1/welcome-to-hometogo-se-investor-relations.html">Investor</a>
+                <a href="https://ir.hometogo.de/websites/hometogo/English/1000/share-information.html">HomeToGo Stock</a>
+                <a href="https://www.hometogo.com/app/">App</a>
+                <a href="https://www.hometogo.com/media/">Insights</a>
+                <a href="https://www.hometogo.com/inspiration/">Inspiration</a>
+                <a href="https://www.hometogo.com/media/covid-19/">COVID-19:Latest updates</a>
+            </div>
+            <div>
+                <p>CONTACT</p>
+                <a href="https://www.hometogo.com/about/press/">Press</a>
+                <a href="https://help-center.hometogo.com/s/?language=en_US">Help Center and Contact</a>
+                <a href="https://www.hometogo.com/partner/">Become a Partner</a>
+                <a href="https://my.hometogo.com/">Sign-up as a Host</a>
+            </div>
+            <div>
+                <p>PRIVACY & TERMS</p>
+                <a href="https://www.hometogo.com/legal/#gtc">Terms of Service</a>
+                <a href="https://www.hometogo.com/legal/#dataprotection">Privacy Policy</a>
+                <a href="https://www.hometogo.com/legal/">Legal</a>
+            </div>
+            <div>
+                <p>HOMETOGO APPS</p>
+                <div id="bimg">
+                    <button class="bimg" onclick="appstore()"><img
+                            src="https://icon-library.com/images/apple-download-icon/apple-download-icon-15.jpg"
+                            alt=""></button>
+                    <button class="bimg" onclick="playstore()" ><img
+                            src="https://www.freepnglogos.com/uploads/play-store-logo-png/google-play-store-logo-keyword-the-amazon-insider-podcast-6.png"
+                            alt=""></button>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div><img src="https://www.hometogo.com/assets/logo/logo-color.svg" onclick="homePage2()" alt=""></div>
+    </div>
+</body>
+
+</html>
+<script>
+    // document.querySelector("#button").addEventListener("click", myfunction);
+    // var jobarr = JSON.parse(localStorage.getItem("jobserch")) || [];
+    // function myfunction() {
+    //     var obj = {
+    //         city: document.querySelector("#editselect1").value,
+    //         preference: document.querySelector("#editselect2").value,
+
+    //     }
+    //     jobarr.push(obj);
+    //     console.log(jobarr)
+    //     localStorage.setItem("jobserch", JSON.stringify(jobarr));
+    //     window.open("searchPage.html", "_self");
+    //}
+
+    document.querySelector("#button_search").addEventListener("click",myfunction);
+    function myfunction(){
+        
+        var C_city=document.querySelector("#nav_City").value;
+        localStorage.setItem('city',C_city);
+
+        var p_preference=document.querySelector("#nav_Preferance").value;
+        localStorage.setItem('preference',p_preference);
+
+        var checkIn=document.querySelector('#nav_Date1').value;
+        localStorage.setItem('checkInDate',checkIn);
+
+        var checkOut=document.querySelector('#nav_Date2').value;
+        localStorage.setItem('checkOutDate',checkOut);
+        window.open("searchPage.html", "_self");
+    }
+
+    function appstore(){
+       window.open("https://apps.apple.com/app/id1104996296?mt=8","_self");
+    }
+
+    function playstore(){
+       window.open("https://play.google.com/store/apps/details?id=com.hometogo&referrer=adjust_reftag%3DcoKRyerthl2QX%26utm_source%3DHomeToGo%2BSite%26utm_campaign%3DFooter%2BFrontdoor","_self");
+    }
+
+    function homePage2(){
+       window.open("index.html","_self");
+    }
+
+</script>
