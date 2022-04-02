@@ -39,6 +39,8 @@ Md Owais Athar
 My responsibilities were focused on building the homepage of the website.
 I have used the HTML & CSS part to build the website homepage and functionality added by using JavaScript.
 
+Medium Blog link : https://medium.com/@owais.athar.8092/collaborative-project-at-masai-school-hometo-go-clone-98016df15c63
+
 Lakhan Yadav
 Lakhan responsibilities were focused on to the search section bar and adding functionality to the search bar using JavaScript.
 
